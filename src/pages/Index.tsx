@@ -2,7 +2,8 @@ import React from 'react';
 import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
 import { EnrollmentLevelsChart } from '@/components/dashboard/EnrollmentLevelsChart';
 import { EnrollmentSourcesChart } from '@/components/dashboard/EnrollmentSourcesChart';
-import { StaffPerformanceChart } from '@/components/dashboard/StaffPerformanceChart';
+import { TelecallerPerformanceChart } from '@/components/dashboard/TelecallerPerformanceChart';
+import { CounsellorPerformanceChart } from '@/components/dashboard/CounsellorPerformanceChart';
 import { DataTable } from '@/components/dashboard/DataTable';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -368,10 +369,10 @@ const Index = () => {
         </div>
 
         {/* Staff Performance */}
-        <StaffPerformanceChart 
-          telecallerData={telecallerData} 
-          counsellorData={counsellorData} 
-        />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+          <TelecallerPerformanceChart data={telecallerData} />
+          <CounsellorPerformanceChart data={counsellorData} />
+        </div>
 
         {/* Data Tables */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
